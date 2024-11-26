@@ -16,8 +16,7 @@
         <p>Contraseña <input type="password" placeholder="Crea tu contraseña" name="contraseña" required></p>
         <p>Cargo:
             <select name="id_cargo" required>
-                <option value="1">Administrador</option>
-                <option value="2">Empleado</option>
+                <option value="2">Usuario Casual</option>
                 <option value="3">Cliente</option>
             </select>
         </p>
