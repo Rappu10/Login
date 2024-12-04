@@ -1,0 +1,231 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset de estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos generales */
+        body {
+            font-family: 'Oxygen', sans-serif;
+            background-color: #0d0d0d;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Encabezado y navegación */
+        .encabezado {
+            background-color: #1a1a1a;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #00bfff;
+            font-family: 'Bebas Neue', sans-serif;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        /* Slider */
+        .slider {
+            position: relative;
+            max-width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slider .slide {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease;
+        }
+
+        /* Sección principal */
+        #inicio {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        #inicio h1 {
+            font-size: 48px;
+            color: #00bfff;
+        }
+
+        #inicio p {
+            font-size: 20px;
+        }
+
+        /* Sección "Quiénes somos" */
+        #sobre-nosotros {
+            padding: 50px 20px;
+            background-color: #1a1a1a;
+            text-align: center;
+        }
+
+        #sobre-nosotros h2 {
+            font-size: 36px;
+            color: #00bfff;
+            margin-bottom: 20px;
+        }
+
+        #sobre-nosotros p {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        /* Galería de productos */
+        #galeria-productos {
+            text-align: center;
+            color: #00bfff;
+            font-size: 36px;
+            margin: 50px 0;
+        }
+
+        /* Estilos de los productos */
+        .galeria {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .productos {
+            width: 300px;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .productos:hover {
+            transform: translateY(-10px);
+        }
+
+        .productos img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .productos h3 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .productos p {
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .productos a {
+            display: inline-block;
+            background-color: #00bfff;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .productos a:hover {
+            background-color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="encabezado">
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="#sobre-nosotros">Quiénes somos</a></li>
+                <li><a href="#galeria-productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="slider">
+            <img src="{% static 'images/slider/celular1.jpg' %}" alt="Portada 1" class="slide">
+            <img src="{% static 'images/slider/tablet1.jpg' %}" alt="Portada 2" class="slide">
+            <img src="{% static 'images/slider/celular2.jpg' %}" alt="Portada 3" class="slide">
+        </div>
+    </div>
+
+    <script src="{% static 'js/slider.js' %}"></script>
+
+    <!-- Sección principal -->
+    <section id="inicio">
+        <h1>Synapse Shop</h1>
+        <p>Tu tienda en línea para celulares y tablets. Encuentra la tecnología que necesitas al mejor precio.</p>
+    </section>
+
+    <!-- Sección "Quiénes somos" -->
+    <section id="sobre-nosotros">
+        <h2>Quiénes somos</h2>
+        <p>Somos una tienda apasionada por la tecnología, ofreciendo los mejores dispositivos móviles y tablets del mercado. Nuestra misión es conectarte con el futuro.</p>
+    </section>
+
+    <!-- Galería de productos -->
+    <h2 id="galeria-productos">Nuestros Productos</h2>
+    <div class="galeria">
+        <div class="productos">
+            <img src="{% static 'images/productos/celular1.jpg' %}" alt="Celular 1">
+            <h3>Celular Premium</h3>
+            <p>Celular con tecnología 5G y cámara avanzada.</p>
+            <a href="producto_ver.html?id_producto=1">COMPRAR</a>
+        </div>
+        <div class="productos">
+            <img src="{% static 'images/productos/tablet1.jpg' %}" alt="Tablet 1">
+            <h3>Tablet Ultra</h3>
+            <p>Ideal para productividad y entretenimiento.</p>
+            <a href="producto_ver.html?id_producto=2">COMPRAR</a>
+        </div>
+        <div class="productos">
+            <img src="{% static 'images/productos/celular2.jpg' %}" alt="Celular 2">
+            <h3>Celular Compacto</h3>
+            <p>Diseño moderno y funciones inteligentes.</p>
+            <a href="producto_ver.html?id_producto=3">COMPRAR</a>
+        </div>
+        <div class="productos">
+            <img src="{% static 'images/productos/tablet2.jpg' %}" alt="Tablet 2">
+            <h3>Tablet Profesional</h3>
+            <p>Potencia y versatilidad para todas tus tareas.</p>
+            <a href="producto_ver.html?id_producto=4">COMPRAR</a>
+        </div>
+    </div>
+</body>
+</html>
